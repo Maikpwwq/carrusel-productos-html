@@ -9,9 +9,12 @@
         #contenedorPrincipal{
             display: flex;
             flex-direction: column;
+            
         }
         #listaProductos{
             width: 100%;
+            justify-content: center;
+            display: flex;
         }
         #contenedorLista{
             justify-content: space-evenly;
@@ -32,24 +35,49 @@
             flex-direction: row;
             margin: 0 auto;
             padding: 10px 10px;
+            justify-content: center;
         }
         #contenedorCarrusel{
-
+            justify-content: center;
         }
         .grupoCarrusel{
             display: flex;
         }
-        .controlDerecha{
-
-        }
-        .controlIzquierda{
-
+        .controlDerecha, .controlIzquierda{
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
         }
         .itemCarrusel{
 
         }
+        .itemCarrusel img{
+            width: 330px;
+            height: 330px;
+            padding: 15px 15px 50px 15px;
+            background-color: gray;
+            border-color: blue;
+            border-width: 10px;
+            border-style: solid;
+        }
         .indicadorCarrusel{
-
+            align-items: flex-end;
+            display: flex;            
+            justify-content: center;
+        }
+        .indicadoresProducto{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
         }
     </style>
 </head>
@@ -74,15 +102,18 @@
         <section id="carrusel" >
             <div id="contenedorCarrusel">
                 <div class="grupoCarrusel">
-                    <span> <a class="controlDerecha" href="#"><img src="" alt="Anterior"></a></span>
-                    <div class="itemCarrusel"><img src="" alt="Imagen"></div>
-                    <div class="itemCarrusel"><img src="" alt="ImagenActiva"></div>
-                    <div class="itemCarrusel"><img src="" alt="Imagen"></div>
-                    <span> <a class="controlIzquierda" href="#"><img src="" alt="Siguiente"></a></span>
+                    <span> <a class="controlDerecha" onclick=""><img src="" alt="Anterior"></a></span>
+                    <div class="itemCarrusel"><img src="https://image.flaticon.com/icons/png/512/2225/2225177.png" alt="Imagen"></div>
+                    <div class="itemCarrusel"><img src="https://image.flaticon.com/icons/png/512/2225/2225177.png" alt="ImagenActiva"></div>
+                    <div class="itemCarrusel"><img src="https://image.flaticon.com/icons/png/512/2225/2225177.png" alt="Imagen"></div>
+                    <span> <a class="controlIzquierda" onclick=""><img src="" alt="Siguiente"></a></span>
                 </div>       
                 <div class="indicadorCarrusel">
-
-    
+                    <ul class="indicadoresProducto">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>    
                 </div> 
             </div>
         </section>
