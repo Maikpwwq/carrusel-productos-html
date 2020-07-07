@@ -6,15 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Carrusel productos </title>
     <style>
+        body {
+            background-color: black;
+        }
         #contenedorPrincipal{
             display: flex;
             flex-direction: column;
-            
+            width: 100%;
+            background-color: darkslategrey;
+            position: relative;
+            top: 33%;
         }
         #listaProductos{
             width: 100%;
+            height: 33px;
             justify-content: center;
             display: flex;
+            position: absolute;            
         }
         #contenedorLista{
             justify-content: space-evenly;
@@ -22,15 +30,31 @@
             width: 70%;  
         }
         #contenedorLista ol li{
-            padding: 5px 30px;
+            padding: 10px 60px 3px 3px;            
+        }
+        li:link { /* unvisited link */
+            color: whitesmoke;
+        }
+        li:visited { /* visited link */
+            color: magenta;
+        }   
+        li:hover { /* mouse over link */
+            color: #731f43; /*goldenrod;*/
         }
         .listaOrdenada{
+            height: 33px;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
+            font-family: "roboto", Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 21px;
+            color: magenta;
+            align-items: flex-start;
+            align-content: flex-start;
+            top: 0;
         }
-        #carrusel{
-            width: 100%;
+        #carrusel{            
             display: flex;
             flex-direction: row;
             margin: 0 auto;
@@ -57,6 +81,12 @@
             user-select: none;
             -webkit-user-select: none;
         }
+        .controlDerecha:hover, .controlIzquierda:hover {
+            color: goldenrod;
+        }
+        .controlIzquierda{
+            right: 100px;
+        }
         .itemCarrusel{
 
         }
@@ -65,7 +95,7 @@
             height: 330px;
             padding: 15px 15px 50px 15px;
             background-color: gray;
-            border-color: blue;
+            border-color: #3399cc;
             border-width: 10px;
             border-style: solid;
         }
@@ -79,27 +109,32 @@
             flex-direction: row;
             align-items: flex-end;
         }
+        .indicadores{
+            padding: 0 21px;
+            list-style-type: circle;
+        }
     </style>
 </head>
 
 <body>
     <section id="contenedorPrincipal">
 
-        <!-- Lista productos -->
-        <section id="listaProductos">
-            <div id="contenedorLista">
-                <ol class="listaOrdenada">
-                    <li> Productos </li>
-                    <li> Productos </li>
-                    <li> Productos </li>
-                    <li> Productos </li>
-                    <li> Productos </li>
-                </ol>
-            </div>
-        </section>
-
+        
         <!-- Carrusel de productos -->
         <section id="carrusel" >
+            <!-- Lista productos -->
+            <section id="listaProductos">
+                <div id="contenedorLista">
+                <ol class="listaOrdenada">
+                    <li class="productos"> Tierra </li>
+                    <li class="productos"> Agua </li>
+                    <li class="productos"> Fuego </li>
+                    <li class="productos"> Aire </li>
+                    <li class="productos"> Campo </li>
+                </ol>
+                </div>
+            </section>
+            <!-- Imagenes productos -->
             <div id="contenedorCarrusel">
                 <div class="grupoCarrusel">
                     <span> <a class="controlDerecha" onclick=""><img src="" alt="Anterior"></a></span>
@@ -107,12 +142,13 @@
                     <div class="itemCarrusel"><img src="https://image.flaticon.com/icons/png/512/2225/2225177.png" alt="ImagenActiva"></div>
                     <div class="itemCarrusel"><img src="https://image.flaticon.com/icons/png/512/2225/2225177.png" alt="Imagen"></div>
                     <span> <a class="controlIzquierda" onclick=""><img src="" alt="Siguiente"></a></span>
-                </div>       
+                </div>   
+                <!-- Indicadores de productos -->    
                 <div class="indicadorCarrusel">
                     <ul class="indicadoresProducto">
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li class="indicadores"> </li>
+                        <li class="indicadores"> </li>
+                        <li class="indicadores"> </li>
                     </ul>    
                 </div> 
             </div>
